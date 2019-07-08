@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MyDiaryApp.Models.Note>
+<link href="~/Content/ShowNotes.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "MyDiary-NoteList";
+}
+
+
+@if (Session["SuccessMessage"] != null)
+{
+    @Session["SuccessMessage"]
+}
+@if (Session["ErrorMessage"] != null)
+{
+    @Session["ErrorMessage"]
+}
+
+<div class="box">
+    <div class="container-fluid">
+        <div class="row content">
+
+            <div class="col-sm-2 sidenav">
+                <ul class="nav nav-pills nav-stacked">
+                    @*<li class="active"><a href="#section1">Md. Jahurul Islam</a></li> </br>*@
+                    <li><strong><a href="/Note/NoteWrite" style="color:#663399;margin-left:10px;font-size:16px;">Write new note</a></strong></li>
+                    <li><strong><a href="/Login/UserIndex" style="color:#663399;margin-left:10px;font-size:16px;">Back to Home</a></strong></li>
+
+                </ul>
+
+            </div>
+
+            <div class="col-sm-9">
+                <h2>List of notes</h2>
+                <table class="table">
+                    <tr>
+                        <th class="col-sm-4">
+                            Note Title
+                        </th>
+                        <th class="col-sm-3">
+                            Created DateTime
+                        </th>
+                        <th class="col-sm-2">Action</th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NoteTitle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedDateTime)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Edit", new { id = item.NotId }) |
+                                @*@Html.ActionLink("Details", "Details", new { id = item.NotId }) |*@
+                                @Html.ActionLink("Delete", "Delete", new { id = item.NotId })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,72 @@
+﻿@using System.Web.UI.WebControls
+@model MyDiaryApp.Models.Note
+<link href="~/Content/Note.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "MyDiary-NoteWrite";
+}
+
+
+
+<div class="box">
+
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+               <h2>Oh, This Is A Dear Diary Moment...</h2>
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#section1">Md. Jahurul Islam</a></li> </br>
+                    <li><strong><a href="/Note/ShowNotes" style="color:#663399;margin-left:10px;font-size:16px;">View all notes</a></strong></li>
+                    <li><strong><a href="/Login/UserIndex" style="color:#663399;margin-left:10px;font-size:16px;">Back to Home</a></strong></li>
+                    
+                </ul>
+            </div>
+
+            <div class="col-sm-10">
+                <h1>What's on your mind today?</h1>
+
+                @using (Html.BeginForm())
+            {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @ViewBag.Message
+                          
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.NoteTitle, htmlAttributes: new { @class = "control-label col-md-1" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.NoteTitle, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Note title......." } })
+                                @Html.ValidationMessageFor(model => model.NoteTitle, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.NoteDescription, htmlAttributes: new { @class = "control-label col-md-1" })
+                            <div class="col-md-10">
+                                <lable><h style="font-size:18px;">Note Description</h></lable> <br />
+                                @Html.TextAreaFor(model => model.NoteDescription, new { @class = "ckeditor" })
+                                @Html.ValidationMessageFor(model => model.NoteDescription, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Save" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
+
+                    @*<strong><a href="/Login/UserIndex" style="color:#663399;margin-left:200px;font-size:16px;">Back to Home</a></strong>
+                        <strong><a href="/Note/ShowNotes" style="color:#663399;margin-left:50px;font-size:16px;">View all notes</a></strong>*@
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

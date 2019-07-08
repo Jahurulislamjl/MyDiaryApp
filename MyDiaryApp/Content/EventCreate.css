@@ -1,0 +1,96 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../Image/bgimage1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+.box {
+    width: 800px;
+    height: 600px;
+    background:white;
+    /*opacity: .7;*/
+    margin: auto;
+    margin-top: 100px;
+    box-sizing: border-box;
+}
+
+.box h1 {
+    margin: 0;
+    padding: 6px;
+    margin-left: 0px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.box h2 {
+    margin-top: 2px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.box ul{
+    margin-top: 150px;
+    margin-left: 20px;
+
+}
+.sidenav {
+      background-color: #f1f1f1;
+      /*width:200px;*/
+      height: 600px;
+    }
+
+.box input {
+    width:100%;
+    margin-bottom:2px;
+    
+}
+
+ 
+.box input[type="submit"]
+{
+    border:none;
+    outline:none;
+    width:300px;
+    height:40px;
+    background:green;
+    color:#fff;
+    font-size:18px;
+    border-radius:20px;
+   
+}
+.box input[type="button"]
+{
+    border:none;
+    outline:none;
+    height:40px;
+    background:#fb2525;
+    color:#fff;
+    font-size:18px;
+    border-radius:20px;
+   
+    margin-right:50%;
+   
+}
+.box input[type="submit"]:hover
+{
+    cursor:pointer;
+    background:#ffc109;
+    color:#000;
+   
+}
+.box input[type="button"]:hover
+{
+    cursor:pointer;
+    background:#ffc109;
+    color:#000;
+   
+}
+
+
+a:hover {
+    cursor: pointer;
+    background: #ffc109;
+    color: #000;
+}
+

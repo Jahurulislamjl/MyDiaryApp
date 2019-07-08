@@ -1,0 +1,112 @@
+﻿
+@model MyDiaryApp.Models.Expense
+@*@model IEnumerable<MyDiaryApp.Models.Expense>*@
+<link href="~/Content/Expense.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "MyDiary-Expense";
+    // List<Expense> expenses = ViewBag.Expenses;
+}
+
+<div class="box">
+    <div class="container-fluid">
+        <div class="row content">
+
+            <div class="col-sm-2 sidenav">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><strong><a href="/Expense/ShowExpense" style="color:black;margin-left:3px;font-size:20px;">View Expense</a></strong></li>
+                    <li><strong><a href="/Login/UserIndex" style="color:black;margin-left:3px;font-size:20px;">Back to Home</a></strong></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-1 sidenav0">
+               
+                @*<h1>see</h1>*@
+            </div>
+
+            <div class="col-sm-4 sidenav1">
+                @using (Html.BeginForm())
+            {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        <h2>Expense Calculate</h2>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.ItemName, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.ItemName, new { htmlAttributes = new { @class = "form-control", placeholder = "Item name" } })
+                                @Html.ValidationMessageFor(model => model.ItemName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control", placeholder = "Amount" } })
+                                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Add" class="btn btn-default" />
+                            </div>
+                        </div>
+
+                    </div>
+                }
+            </div>
+
+            <div class="col-sm-1 sidenav2">
+                
+                @*<h1>see right</h1>*@
+            </div>
+
+
+            <div class="col-sm-4 sidenav3">
+
+    <div class="navber-header" style="background:#2F4F4F;padding:5px;">
+        <h3> Today's Expense List</h3>
+    </div>
+
+    @if (ViewBag.Expenses != null)
+    {
+
+        <table class="table">
+            <tr>
+                <th>Item Name</th>
+                <th>Amount</th>
+
+            </tr>
+            @foreach (var item in ViewBag.Expenses)
+            {
+
+                <tr>
+                    <td>@item.ItemName</td>
+                    <td>@item.Amount</td>
+                </tr>
+
+            }
+
+        </table>
+         
+                   
+                }
+                <div style="background:#808080;padding:5px;">
+                    <table>
+                        <tr>
+                            <td style="font-size:22px;color:white;">&nbsp @ViewBag.Count items </td>
+                            <td style="font-size:22px;color:white;">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Total=&nbsp @ViewBag.Total</td>
+                        </tr>
+                    </table>
+                </div>
+                <strong class="btn btn-default" style="border-radius: 20px;Background:#2F4F4F;margin-top:10px;font-size:20px;"><h>@Html.ActionLink("Save", "Expense", new { id = 1 })</h></strong>
+                @*@Html.ActionLink("Save", "Expense", new { id = 1 })*@
+            </div>
+        </div>
+    </div>
+</div>
+
+

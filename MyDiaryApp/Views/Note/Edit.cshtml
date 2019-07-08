@@ -1,0 +1,150 @@
+﻿@model MyDiaryApp.Models.Note
+
+@{
+    ViewBag.Title = "MyDiary-EditNote";
+}
+
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+
+.box {
+    width: 1000px;
+    height: 650px;
+    background: #E0FFFF;
+    margin: auto;
+    margin-top: 100px;
+    box-sizing: border-box;
+    margin-left: 80px;
+   
+    
+}
+
+
+.box h1 {
+    margin: 0;
+    padding: 6px;
+    margin-left: 50px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+    .box h2 {
+        margin-top:2px;
+        color: black;
+        font-size: 18px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+.box input {
+    width: 500px;
+    margin-bottom:5px;
+    margin-left: 0;
+    
+}
+
+  .box input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #20B2AA;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        margin-left: 200px;
+        
+    }
+
+    .box input[type="button"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #fb2525;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        
+     
+    }
+
+    .box input[type="submit"]:hover {
+        cursor: pointer;
+        background: #ffc109;
+        color: #000;
+    }
+
+    .box input[type="button"]:hover {
+        cursor: pointer;
+        background: #ffc109;
+        color: #000;
+    }
+
+
+a:hover {
+    cursor: pointer;
+    background: #ffc109;
+    color: #000;
+
+}
+    .aa:hover {
+        cursor: pointer;
+        background: none;
+    }
+
+</style>
+
+
+@ViewBag.SuccessMessage;
+
+
+<div class="box">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h1>Note details / Edit here</h1>
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.NotId)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NoteTitle, htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-10">
+                    <h2>Note title</h2>
+                    @Html.EditorFor(model => model.NoteTitle, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NoteTitle, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NoteDescription, htmlAttributes: new { @class = "control-label col-md-1" })
+                <div class="col-md-10">
+                    <h2>Note Description</h2>
+                    @Html.TextAreaFor(model => model.NoteDescription, new { @class = "ckeditor" })
+                    @Html.ValidationMessageFor(model => model.NoteDescription, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+
+            <strong><a href="/Note/ShowNotes" style="color:#696969;margin-left:35px;font-size:16px;">Back to note list</a></strong>
+
+        </div>
+    }
+
+</div>
+

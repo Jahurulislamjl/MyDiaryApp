@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MyDiaryApp.Models.Event>
+<link href="~/Content/ShowEvent.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "MyDiary-EventList";
+}
+
+
+@if (Session["SuccessMessage"] != null)
+{
+    @Session["SuccessMessage"]
+}
+@if (Session["ErrorMessage"] != null)
+{
+    @Session["ErrorMessage"]
+}
+
+
+<div class="box">
+    <div class="container-fluid">
+        <div class="row content">
+
+            <div class="col-sm-2 sidenav">
+                <ul class="nav nav-pills nav-stacked">
+                    @*<li class="active"><a href="#section1">Md. Jahurul Islam</a></li> </br>*@
+                    <li><strong><a href="/Event/CreateEvent" style="color:#663399;margin-left:10px;font-size:16px;">Write new note</a></strong></li>
+                    <li><strong><a href="/Login/UserIndex" style="color:#663399;margin-left:10px;font-size:16px;">Back to Home</a></strong></li>
+
+                </ul>
+
+            </div>
+
+            <div class="col-sm-9">
+                <h1>List Of Events</h1>
+                <table class="table">
+                    <tr>
+                        <th>
+                            Event Description
+                        </th>
+                        <th>
+                            Created DateTime
+                        </th>
+                        <th>
+                            Event Date
+                        </th>
+                        <th>
+                            Event Time
+                        </th>
+
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EventDescription)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedDateTime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EventDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EventTime)
+                            </td>
+
+                            <td>
+                                @Html.ActionLink("Edit", "EditEvent", new { id = item.EventId }) |
+                                @Html.ActionLink("Details", "DetailsEvent", new { id = item.EventId }) |
+                                @Html.ActionLink("Delete", "DeleteEvent", new { id = item.EventId })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

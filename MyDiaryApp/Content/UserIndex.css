@@ -1,0 +1,108 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-image: url('../Image/bgimage1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+
+.box {
+    width: 1100px;
+    height: 700px;
+    background-image: url('../Image/bgimage1.jpg');
+    margin: auto;
+    margin-top: 100px;
+    box-sizing: border-box;
+    margin-left: 20px;
+}
+
+.box1 {
+    width: 1050px;
+    height: 450px;
+    /*background-image: url('../Image/bgimage1.jpg');*/
+    margin: auto;
+    margin-top: 50px;
+    box-sizing: border-box;
+    margin-left: 25px;
+}
+
+h{
+    font-size:24px;
+    font-family: 'Times New Roman', Times, serif;
+}
+h1{
+    font-size:20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.navber-header{
+    margin-top:30px;
+    padding:50px;
+    background:white;
+    border-radius:20px 20px 20px 20px;
+}
+
+.sidenavf{
+    background:#003333;
+    height:430px;
+    width:60px;
+    border-radius:20px 0px 0px 20px;
+    border-right: 4px dotted white;
+}
+
+.sidenav0{
+    background-image: url('../Image/bgimage1.jpg');
+    height:430px;
+}
+
+.sidenav1{
+    background:	#008080;
+    height:430px;
+    border-radius:0px 10px 10px 0px;
+}
+
+.sidenav2 {
+   
+    background-image: url('../Image/event.gif');
+    background-size: 270px;
+    background-position: center;
+    border-radius:10px 10px 10px 10px;
+    height: 430px;
+}
+
+.sidenav3 {
+    background:#006699;
+    background-image: url('../Image/expense.png');
+    background-size: 270px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius:10px 10px 10px 10px;
+    height: 430px;
+    
+}
+
+.note{
+    padding:20px;
+    padding-right:30px;
+    background:#80b2b2;
+    margin-top:175px;
+    border-radius:25px 25px 25px 25px;
+    border-style: groove;
+}
+
+.event{
+    padding:20px;
+    background:#006699;
+    margin-top:175px;
+    border-radius:25px 25px 25px 25px;
+    border-style: groove;
+}
+.expense{
+    padding:20px;
+    background:#f2f2f2;
+    margin-top:52px;
+    border-radius:25px 25px 25px 25px;
+    border-style: groove;
+}

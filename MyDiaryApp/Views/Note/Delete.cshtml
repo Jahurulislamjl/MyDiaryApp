@@ -1,0 +1,135 @@
+﻿@model MyDiaryApp.Models.Note
+
+@{
+    ViewBag.Title = "MyDiary-NoteDelete";
+}
+
+<style>
+
+    body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+
+.box {
+    width: 700px;
+    height: 300px;
+    background: #E0FFFF;
+    margin: auto;
+    margin-top: 100px;
+    box-sizing: border-box;
+    margin-left: 80px;
+   
+    
+}
+
+
+.box h2 {
+    margin: 0;
+    padding: 6px;
+    margin-left: 50px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color:red;
+}
+
+ dt{
+     font-size:18px;
+}
+
+ dt, dd{
+     font-size:16px;
+}
+
+
+
+
+  .box input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        background:red;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        margin-left: 200px;
+        
+    }
+
+    .box input[type="button"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #fb2525;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        
+     
+    }
+
+    .box input[type="submit"]:hover {
+        cursor: pointer;
+        background: #ffc109;
+        color: #000;
+    }
+
+    .box input[type="button"]:hover {
+        cursor: pointer;
+        background: #ffc109;
+        color: #000;
+    }
+
+
+a:hover {
+    cursor: pointer;
+    background: #ffc109;
+    color: #000;
+
+}
+    .aa:hover {
+        cursor: pointer;
+        background: none;
+    }
+</style>
+
+<div class="box">
+    <h2>Are you sure you want to delete this?</h2>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                Note Title:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NoteTitle)
+            </dd>
+
+            <dt>
+                Description:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NoteDescription)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                <strong class="btn btn-default" style="border-radius: 20px;Background:green;"><a href="/Note/ShowNotes" style="color:#fff;font-size:18px;background:none;">Cancel</a></strong>
+            </div>
+        }
+    </div>
+</div>

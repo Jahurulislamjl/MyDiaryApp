@@ -1,0 +1,99 @@
+﻿@model MyDiaryApp.Models.Event
+<link href="~/Content/EventCreate.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "MyDiary-CreateEvent";
+}
+
+@ViewBag.ErrorMessage
+@ViewBag.Message
+
+<div class="box">
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-3 sidenav">
+
+                <ul class="nav nav-pills nav-stacked">
+                    <li class="active"><a href="#section1">Md. Jahurul Islam</a></li> <br>
+                    <li><strong><a href="/Event/ShowEvent" style="color:#663399;margin-left:10px;font-size:16px;">View event list</a></strong></li>
+                    <li><strong><a href="/Login/UserIndex" style="color:#663399;margin-left:10px;font-size:16px;">Back to Home</a></strong></li>
+                </ul>
+            </div>
+
+            <div class="col-sm-2 sidenav1">
+                </div>
+
+                <div class="col-sm-7">
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+                            <h1>Create a new event</h1>
+
+                            <hr />
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EventDate, htmlAttributes: new { @class = "control-label col-md-0" })
+                                <div class="col-md-10">
+                                    <h2>Event Date</h2>
+                                    @Html.EditorFor(model => model.EventDate, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.EventDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EventTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    <h2>Event Time</h2>
+                                    @Html.EditorFor(model => model.EventTime, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.EventTime, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ReminderDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    <h2>Reminder Date</h2>
+                                    @Html.EditorFor(model => model.ReminderDate, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ReminderDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ReminderTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    <h2>Reminder Time</h2>
+                                    @Html.EditorFor(model => model.ReminderTime, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ReminderTime, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EventDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    <h2>Event Description</h2>
+                                    @Html.EditorFor(model => model.EventDescription, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.EventDescription, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <div class="col-md-offset-0 col-md-10">
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+
+                </div>
+            </div>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

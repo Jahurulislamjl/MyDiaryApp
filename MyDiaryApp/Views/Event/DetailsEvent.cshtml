@@ -1,0 +1,89 @@
+﻿@model MyDiaryApp.Models.Event
+
+@{
+    ViewBag.Title = "MyDiary-DetailsEvent";
+}
+<style>
+
+    h2 {
+        margin-top:30px;
+        color: blue;
+        font-size: 28px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    dt{
+        font-size: 18px;
+        margin-bottom:5px;
+    }
+
+    dt, dd{
+        font-size: 16px;
+    }
+
+</style>
+
+<h2>Event Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+        <dt>
+            Created DateTime
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDateTime)
+        </dd>
+
+        <dt>
+            Event Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventDate)
+        </dd>
+
+        <dt>
+            Event Time
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventTime)
+        </dd>
+
+        <dt>
+            Reminder Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReminderDate)
+        </dd>
+
+        <dt>
+            Reminder Time
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReminderTime)
+        </dd>
+
+        <dt>
+            Event Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventDescription)
+        </dd>
+
+        
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditEvent", new { id = Model.EventId }) |
+    @Html.ActionLink("Back to List", "ShowEvent","Event")
+</p>

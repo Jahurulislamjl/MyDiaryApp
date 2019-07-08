@@ -1,0 +1,112 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../Image/bgimage1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+
+.box {
+    width: 1200px;
+    height: 600px;
+    background:white;
+    margin: auto;
+    margin-top: 100px;
+    box-sizing: border-box;
+    margin-left: 20px;
+   
+    
+}
+
+
+.box h1 {
+    margin: 0;
+    padding: 6px;
+    margin-left: 50px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.box h2 {
+    font-style: italic;
+    color:#8B008B;
+    margin-top: 50px;
+    margin-left: 25px;
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+.box input {
+    width: 500px;
+    margin-bottom:5px;
+    margin-left: 0;
+    
+}
+
+.box ul{
+    margin-top: 100px;
+    margin-left: 20px;
+
+}
+.sidenav {
+      background-color: #f1f1f1;
+      width:200px;
+      height: 600px;
+    }
+
+
+
+  .box input[type="submit"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #20B2AA;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        margin-left: 200px;
+        
+    }
+
+    .box input[type="button"] {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #fb2525;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        
+     
+    }
+
+    .box input[type="submit"]:hover {
+        cursor: pointer;
+        background: #ffc109;
+        color: #000;
+    }
+
+    .box input[type="button"]:hover {
+        cursor: pointer;
+        background: #ffc109;
+        color: #000;
+    }
+
+
+a:hover {
+    cursor: pointer;
+    background: #ffc109;
+    color: #000;
+
+}
+.aa:hover {
+    cursor: pointer;
+ background:none;
+  
+  
+}
+#msg{
+    margin-left:100px;
+}

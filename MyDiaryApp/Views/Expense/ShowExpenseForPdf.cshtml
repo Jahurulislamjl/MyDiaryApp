@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MyDiaryApp.Models.Expense>
+
+@{
+    ViewBag.Title = "ShowExpenseForPdf";
+}
+
+<h2>ShowExpenseForPdf</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.ItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+
+       
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+      
+        </tr>
+
+    }
+    <tr>
+        <td>Total</td>
+        <td>@ViewBag.Total</td>
+    </tr>
+
+</table>
+

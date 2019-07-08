@@ -1,0 +1,49 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background:white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+}
+
+.box1 {
+    width: 1200px;
+    height: 80px;
+    background: white;
+    margin: auto;
+    margin-top: 80px;
+    /*box-sizing: border-box;*/
+    /*margin-left: 20px;*/ 
+}
+
+
+.box {
+    width: 1200px;
+    height: 100px;
+    background: white;
+    margin: auto;
+    margin-top: 10px;
+    /*box-sizing: border-box;*/
+    /*margin-left: 20px;*/ 
+}
+
+.sidenav1 {
+      background-color:white;
+      /*width:200px;*/
+      height: 100px;
+    }
+.sidenav2 {
+      background-color: white;
+      /*width:200px;*/
+      height: 100px;
+    }
+
+.pdf {
+    width: 1200px;
+    height: 50px;
+    background: white;
+    margin: auto;
+    margin-top: 50px;
+}
